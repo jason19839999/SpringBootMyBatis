@@ -8,11 +8,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -46,7 +42,7 @@ public class AreaController {
 	 * @return
 	 */
 	@RequestMapping(value = "/getareabyid", method = RequestMethod.GET)
-	private Map<String, Object> getAreaById(Integer areaId) {
+	private Map<String, Object> getAreaById(@RequestParam("areaId") Integer areaId) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
 		// 获取区域信息
 		Area area = areaService.getAreaById(areaId);
