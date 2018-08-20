@@ -1,4 +1,4 @@
-package com.imooc.dao;
+package com.imooc.config;
 
 import java.sql.SQLException;
 
