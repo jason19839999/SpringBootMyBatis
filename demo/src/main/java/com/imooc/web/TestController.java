@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Random;
 
 @RestController
 public class TestController {
@@ -20,7 +21,9 @@ public class TestController {
     @ResponseBody
     public String mybatis(){
         List<String> strList =  hKBillsService.listShowNames();
-        return  strList.get(0);
+        Random rm = new Random();
+        int i = rm.nextInt(strList.size()) ;
+        return  strList.get(i);
     }
 
 }
